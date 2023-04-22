@@ -1,0 +1,29 @@
+.popular {
+  padding: 100px 0;
+  .container {
+    .products-container {
+      .btns {
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        border-bottom: 1px solid #efefef;
+        button {
+          font-size: 18px;
+          padding: 20px;
+          border-bottom: 1px solid inherit;
+
+          &.active {
+            color: $color_wood;
+            border-bottom: 1px solid $color_wood;
+          }
+        }
+      }
+    }
+    .discover-btn {
+      display: block;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  }
+}

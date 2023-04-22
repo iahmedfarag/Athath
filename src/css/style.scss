@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+$color_wood: #966f33;
+$color_sky: #335b96;
+$color_white: #fff;
+$color_black: #000;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: inherit;
+}
+
+// container
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 10px;
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.discover-btn {
+  background-color: $color_sky;
+  color: $color_white;
+  padding: 15px 20px;
+  font-size: 16px;
+  transition: 0.2s;
+  &:hover {
+    background-color: $color_wood;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 16px;
+    color: gray;
+  }
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  article {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: calc(100% / 3 - 60px / 3);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    .info {
+      padding: 10px;
+      a {
+        display: block;
+        margin-bottom: 10px;
+      }
+      h3 {
+        color: $color_wood;
+      }
+    }
+
+    &:hover {
+      .info {
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .products {
+    article {
+      width: calc(100% / 2 - 60px / 2);
+    }
+  }
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+  .products {
+    article {
+      width: calc(100%);
+    }
+  }
+}
+
+@import "./Navbar";
+@import "./Hero";
+@import "./Popular";
+@import "./Text";
+@import "./Like";
+@import "./Insta";
+@import "./Features";
+@import "./Footer";

@@ -1,0 +1,47 @@
+.feats {
+  background-color: $color_wood;
+  padding: 50px 0;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    article {
+      width: calc(100% / 4 - 90px / 4);
+      .icon {
+        font-size: 50px;
+        color: #333;
+        display: flex;
+        align-content: baseline;
+      }
+      h3 {
+        margin: 5px 0;
+      }
+      p {
+        color: #333;
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .feats {
+    .container {
+      article {
+        width: calc(100% / 2 - 30px / 2);
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .feats {
+    .container {
+      article {
+        text-align: center;
+        width: calc(100%);
+        .icon {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

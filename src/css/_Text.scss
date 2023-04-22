@@ -1,0 +1,53 @@
+.text {
+  display: flex;
+  flex-wrap: wrap;
+  .left {
+    width: 55%;
+    div {
+      width: 100%;
+      height: 100%;
+      background-image: url("../assets//product05.png");
+      background-repeat: no-repeat no-repeat;
+      background-position: center center;
+    }
+  }
+  .right {
+    background-color: $color_wood;
+    padding: 120px 50px;
+    width: 45%;
+    margin-left: -5px;
+    h2 {
+      font-size: 40px;
+      line-height: 1.1;
+    }
+    p {
+      margin: 20px 0;
+      span {
+        display: block;
+      }
+    }
+    .discover-btn {
+      &:hover {
+        background-color: $color_sky;
+        color: $color_wood;
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .text {
+    .left {
+      width: 100%;
+      height: 500px;
+    }
+    .right {
+      width: 100%;
+      padding: 30px;
+      p {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}

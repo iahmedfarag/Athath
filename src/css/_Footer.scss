@@ -1,0 +1,122 @@
+footer {
+  position: relative;
+  padding: 100px 0;
+  background-color: $color_sky;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    article {
+      width: calc(20% - 150px / 4);
+      h4 {
+        margin-bottom: 10px;
+        color: #ccc;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        li {
+          a {
+            color: #222;
+            &:hover {
+              color: $color_wood;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    article.text {
+      width: calc(40% - 150px / 4);
+      .logo {
+        width: 70px;
+        img {
+          width: 100%;
+        }
+      }
+      p {
+        color: #222;
+        margin: 20px 0;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        li {
+          a {
+            font-size: 30px;
+            transition: 0.2s;
+            color: $color_black;
+            &:hover {
+              color: $color_wood;
+            }
+          }
+        }
+      }
+    }
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background-color: $color_wood;
+  }
+  .made {
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .heart {
+      color: red;
+    }
+    span {
+      font-weight: bold;
+      border-bottom: 1px solid $color_wood;
+    }
+    a {
+      font-size: 22px;
+      display: block;
+      &:hover {
+        color: $color_wood;
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  footer {
+    .container {
+      gap: 40px;
+      article {
+        // text-align: center;
+        width: calc(100% / 2 - 50px / 2);
+      }
+      article.text {
+        width: calc(100% / 2 - 50px / 2);
+        .logo {
+          width: 70px;
+          //   margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  footer {
+    .overlay {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+}
