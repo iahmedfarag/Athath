@@ -19,7 +19,6 @@ const PopularProducts = () => {
               <button className="active">Sofa</button>
               <button>Table</button>
               <button>Chair</button>
-              <button>Bed</button>
             </div>
             <div className="products">
               <article>
