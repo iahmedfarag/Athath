@@ -15,7 +15,6 @@ const HomePage = () => {
       <TextSection />
       <ProductsLike />
       <InstagramSection />
-      <Features />
     </>
   );
 };

@@ -18,6 +18,10 @@ import PopularProducts from "./components/PopularProducts";
 import ProductsLike from "./components/ProductsLike";
 import TextSection from "./components/TextSection";
 import Features from "./components/Features";
+import SingleProduct from "./components/SingleProduct.jsx";
+import Filters from "./components/Filters.jsx";
+import Sort from "./components/Sort.jsx";
+import Products from "./components/Products.jsx";
 
 export {
   // pages
@@ -39,4 +43,8 @@ export {
   ProductsLike,
   TextSection,
   Features,
+  SingleProduct,
+  Filters,
+  Sort,
+  Products,
 };
