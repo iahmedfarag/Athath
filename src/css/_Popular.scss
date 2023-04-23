@@ -5,6 +5,7 @@
       .btns {
         margin-bottom: 50px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 30px;
         border-bottom: 1px solid #efefef;
@@ -24,6 +25,36 @@
       display: block;
       margin: 0 auto;
       margin-top: 50px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .popular {
+    .container {
+      .products-container {
+        .btns {
+          gap: 15px;
+          button {
+            font-size: 18px;
+            padding: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .popular {
+    .container {
+      .products-container {
+        .btns {
+          gap: 0px;
+          button {
+            font-size: 16px;
+            padding: 20px;
+          }
+        }
+      }
     }
   }
 }

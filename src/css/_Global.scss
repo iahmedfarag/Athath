@@ -93,12 +93,14 @@ button {
         color: $color_wood;
       }
     }
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
 
     &:hover {
-      .info {
-        a {
-          text-decoration: underline;
-        }
+      a {
+        text-decoration: underline;
       }
     }
   }

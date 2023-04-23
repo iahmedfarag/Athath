@@ -1,11 +1,13 @@
 import React from "react";
-import product1 from "../assets/product02.png";
-import product2 from "../assets/product03.png";
-import product3 from "../assets/product04.png";
 import { useProductsContext } from "../context/products_context.jsx";
+import { useFilterContext } from "../context/filters_context.jsx";
+import { Link } from "react-router-dom";
 const PopularProducts = () => {
-  const test = useProductsContext();
-  console.log(test);
+  const { productsLoading } = useProductsContext();
+  const { changeCategory, allProducts, popProducts, activePopCategory } =
+    useFilterContext();
+  const categoriesArr = allProducts.map((product) => product.category);
+  const categories = [...new Set(categoriesArr)];
   return (
     <>
       <section className="popular">
@@ -18,36 +20,50 @@ const PopularProducts = () => {
             </p>
           </header>
           <div className="products-container">
-            <div className="btns">
-              <button className="active">Sofa</button>
-              <button>Table</button>
-              <button>Chair</button>
-            </div>
-            <div className="products">
-              <article>
-                <img src={product1} alt="" />
-                <div className="info">
-                  <a href="#">Lorem ipsum dolor sit amet.</a>
-                  <h3>$367</h3>
+            {productsLoading ? (
+              <h1>Loading....</h1>
+            ) : (
+              <>
+                <div className="btns">
+                  {categories.map((category, index) => {
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          changeCategory(category);
+                        }}
+                        className={
+                          activePopCategory === category ? "active" : ""
+                        }
+                      >
+                        {category.charAt(0).toUpperCase() + category.slice(1)}
+                      </button>
+                    );
+                  })}
                 </div>
-              </article>
-              <article>
-                <img src={product2} alt="" />
-                <div className="info">
-                  <a href="#">Lorem ipsum dolor sit amet.</a>
-                  <h3>$367</h3>
+
+                <div className="products">
+                  {popProducts.map((product) => {
+                    const { id, name, price, image } = product;
+                    return (
+                      <article key={id}>
+                        <img src={image} alt="" />
+                        <div className="info">
+                          <a href="#">
+                            {name.charAt(0).toUpperCase() + name.slice(1)}
+                          </a>
+                          <h3>${price}</h3>
+                        </div>
+                      </article>
+                    );
+                  })}
                 </div>
-              </article>
-              <article>
-                <img src={product3} alt="" />
-                <div className="info">
-                  <a href="#">Lorem ipsum dolor sit amet.</a>
-                  <h3>$367</h3>
-                </div>
-              </article>
-            </div>
+              </>
+            )}
           </div>
-          <button className="discover-btn">DISCOVER ALL</button>
+          <Link to="/products">
+            <button className="discover-btn">DISCOVER ALL</button>
+          </Link>
         </div>
       </section>
     </>

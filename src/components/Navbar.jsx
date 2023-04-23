@@ -26,26 +26,24 @@ const Navbar = () => {
 
   window.addEventListener("scroll", (e) => {
     if (window.scrollY > 400) {
-      navbarRef2.current.classList.add("fixed");
-      navbarRef1.current.classList.add("fixed");
+      navbarRef2?.current?.classList.add("fixed");
+      navbarRef1?.current?.classList.add("fixed");
 
-      navbarRef2.current.classList.add("animate__fadeInDown");
-      navbarRef1.current.classList.add("animate__fadeInDown");
+      navbarRef2?.current?.classList.add("animate__fadeInDown");
+      navbarRef1?.current?.classList.add("animate__fadeInDown");
     } else {
-      navbarRef2.current.classList.remove("fixed");
-      navbarRef1.current.classList.remove("fixed");
-      navbarRef2.current.classList.remove("animate__fadeInDown");
-      navbarRef1.current.classList.remove("animate__fadeInDown");
+      navbarRef2?.current?.classList.remove("animate__fadeInDown");
+      navbarRef1?.current?.classList.remove("animate__fadeInDown");
+
+      navbarRef1?.current?.classList.remove("fixed");
+      navbarRef2?.current?.classList.remove("fixed");
     }
   });
 
   return (
     <>
       {/* nav default */}
-      <nav
-        className="big animate__animated animate__faster animate__fadeInDown"
-        ref={navbarRef1}
-      >
+      <nav className="big animate__animated animate__faster" ref={navbarRef1}>
         {/* nav logo */}
         <div className="nav-logo">
           <img src={logo} alt="logo" />
@@ -81,11 +79,9 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+
       {/* nav for small screens */}
-      <nav
-        className="small animate__animated animate__faster  animate__fadeInDown"
-        ref={navbarRef2}
-      >
+      <nav className="small animate__animated animate__faster" ref={navbarRef2}>
         {/* nav logo */}
         <div className="nav-logo">
           <img src={logo} alt="logo" />

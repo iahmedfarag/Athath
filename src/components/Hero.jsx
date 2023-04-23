@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-wrapper">
-        <div className="hero-card">
+        <div className="hero-card animate__animated">
           <span>70% SALE OFF</span>
           <h1>
             FURNITURE <span></span> AT COST

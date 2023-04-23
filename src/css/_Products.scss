@@ -9,6 +9,9 @@
     }
     .filters {
       width: 25%;
+      h3 {
+        margin-bottom: 10px;
+      }
       form {
         display: flex;
         flex-direction: column;
@@ -98,6 +101,22 @@
         align-items: center;
         gap: 20px;
         margin-bottom: 25px;
+        .display {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          button {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            &:hover {
+              color: $color_wood;
+            }
+            &.active {
+              color: $color_wood;
+            }
+          }
+        }
         .by {
           display: flex;
           gap: 5px;

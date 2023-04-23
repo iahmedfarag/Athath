@@ -11,10 +11,11 @@ nav.big {
   &.fixed {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 0.3s;
+    height: 70px;
 
     .nav-logo {
-      width: 100px;
-      height: 100px;
+      width: 70px;
+      height: 70px;
       img {
         width: 100%;
       }

@@ -1,8 +1,11 @@
 import React from "react";
-import product1 from "../assets/product02.png";
-import product2 from "../assets/product03.png";
-import product3 from "../assets/product04.png";
+import { useProductsContext } from "../context/products_context.jsx";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 const ProductsLike = () => {
+  const { productsLike } = useProductsContext();
+
   return (
     <section className="like">
       <div className="container">
@@ -15,30 +18,27 @@ const ProductsLike = () => {
         </header>
         <div className="products-container">
           <div className="products">
-            <article>
-              <img src={product1} alt="" />
-              <div className="info">
-                <a href="#">Lorem ipsum dolor sit amet.</a>
-                <h3>$367</h3>
-              </div>
-            </article>
-            <article>
-              <img src={product2} alt="" />
-              <div className="info">
-                <a href="#">Lorem ipsum dolor sit amet.</a>
-                <h3>$367</h3>
-              </div>
-            </article>
-            <article>
-              <img src={product3} alt="" />
-              <div className="info">
-                <a href="#">Lorem ipsum dolor sit amet.</a>
-                <h3>$367</h3>
-              </div>
-            </article>
+            {productsLike.map((product) => {
+              console.log(product);
+              const { id, name, price, image } = product;
+
+              return (
+                <article key={id}>
+                  <img src={image} alt="" />
+                  <div className="info">
+                    <a href="#">
+                      {name.charAt(0).toUpperCase() + name.slice(1)}
+                    </a>
+                    <h3>${price}</h3>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
-        <button className="discover-btn">DISCOVER ALL</button>
+        <Link to="/products">
+          <button className="discover-btn">DISCOVER ALL</button>
+        </Link>
       </div>
     </section>
   );

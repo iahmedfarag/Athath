@@ -99,7 +99,12 @@ button {
 .products article .info h3 {
   color: #966f33;
 }
-.products article:hover .info a {
+.products article img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.products article:hover a {
   text-decoration: underline;
 }
 
@@ -127,10 +132,11 @@ nav.big {
 nav.big.fixed {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: 0.3s;
+  height: 70px;
 }
 nav.big.fixed .nav-logo {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
 nav.big.fixed .nav-logo img {
   width: 100%;
@@ -398,19 +404,19 @@ section.hero .hero-wrapper .white-overlay {
     height: 860px;
     padding-bottom: 50px;
   }
-  section.hero .hero-card {
+  section.hero .hero-wrapper .hero-card {
     margin-left: 10%;
   }
-  section.hero .hero-card span {
+  section.hero .hero-wrapper .hero-card span {
     font-size: 26px;
   }
-  section.hero .hero-card h1 {
+  section.hero .hero-wrapper .hero-card h1 {
     margin: 10px 0;
   }
-  section.hero .hero-card p {
+  section.hero .hero-wrapper .hero-card p {
     margin-bottom: 10px;
   }
-  section.hero .hero-wrapper .white-overlay {
+  section.hero .white-overlay {
     height: 50px;
     bottom: -50px;
   }
@@ -468,6 +474,7 @@ section.hero .hero-wrapper .white-overlay {
 .popular .container .products-container .btns {
   margin-bottom: 50px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
   border-bottom: 1px solid #efefef;
@@ -487,6 +494,24 @@ section.hero .hero-wrapper .white-overlay {
   margin-top: 50px;
 }
 
+@media (max-width: 992px) {
+  .popular .container .products-container .btns {
+    gap: 15px;
+  }
+  .popular .container .products-container .btns button {
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .popular .container .products-container .btns {
+    gap: 0px;
+  }
+  .popular .container .products-container .btns button {
+    font-size: 16px;
+    padding: 20px;
+  }
+}
 .text {
   display: flex;
   flex-wrap: wrap;
@@ -909,6 +934,9 @@ section.single .container .product-info .add .discover-btn {
 .products-page .container .filters {
   width: 25%;
 }
+.products-page .container .filters h3 {
+  margin-bottom: 10px;
+}
 .products-page .container .filters form {
   display: flex;
   flex-direction: column;
@@ -988,6 +1016,22 @@ section.single .container .product-info .add .discover-btn {
   align-items: center;
   gap: 20px;
   margin-bottom: 25px;
+}
+.products-page .container .products-container .sort .display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.products-page .container .products-container .sort .display button {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+.products-page .container .products-container .sort .display button:hover {
+  color: #966f33;
+}
+.products-page .container .products-container .sort .display button.active {
+  color: #966f33;
 }
 .products-page .container .products-container .sort .by {
   display: flex;

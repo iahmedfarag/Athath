@@ -1,11 +1,16 @@
 import React from "react";
-import { BsFillGridFill, BsList } from "react-icons/bs";
+import { BsFillGridFill } from "react-icons/bs";
+import { FaThList } from "react-icons/fa";
 const Sort = () => {
   return (
     <section className="sort">
       <div className="display">
-        <BsFillGridFill />
-        <BsList />
+        <button className="active">
+          <BsFillGridFill />
+        </button>
+        <button>
+          <FaThList />
+        </button>
       </div>
       <div className="length">
         <p>22 products found</p>
