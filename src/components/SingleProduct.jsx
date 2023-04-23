@@ -1,74 +1,109 @@
-import React from "react";
-import product6 from "../assets/product06.png";
-import product7 from "../assets/product07.png";
-import product8 from "../assets/product10.png";
-import product9 from "../assets/product11.png";
-import { AiOutlineMinus, AiOutlinePlus, AiFillStar } from "react-icons/ai";
+import { React, useEffect } from "react";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
+import { useParams } from "react-router-dom";
+import { single_product_url as url } from "../data.js";
+import { useProductsContext } from "../context/products_context.jsx";
+import { useState } from "react";
 const SingleProduct = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { id } = useParams();
+  const { getSingleProduct, singleProduct, singleProductLoading } =
+    useProductsContext();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    getSingleProduct(`${url}${id}`);
+  }, [id]);
+
+  if (singleProductLoading) {
+    return <h1>Loading......</h1>;
+  }
+  const {
+    id: sku,
+    images,
+    colors,
+    price,
+    stock,
+    shipping,
+    category,
+    reviews,
+    stars,
+    name,
+    description,
+    company,
+  } = singleProduct;
+  const tempStars = Array.from({ length: 5 }, (_, index) => {
+    const number = index + 0.5;
+    return (
+      <li key={index}>
+        {stars > number ? (
+          <BsStarFill />
+        ) : stars > index ? (
+          <BsStarHalf />
+        ) : (
+          <BsStar />
+        )}
+      </li>
+    );
+  });
   return (
     <section className="single">
       <div className="container">
         <div className="product-images">
           <div className="main">
-            <img src={product6} alt="" />
+            <img src={images ? images[activeIndex].url : ""} alt="" />
           </div>
           <div className="imgs">
-            <img src={product6} alt="" />
-            <img src={product7} alt="" />
-            <img src={product8} alt="" />
-            <img src={product9} alt="" />
+            {images?.map((img, index) => {
+              if (index === 3) {
+                return;
+              }
+              return (
+                <img
+                  src={img.url}
+                  key={img.id}
+                  onClick={() => {
+                    setActiveIndex(index);
+                  }}
+                />
+              );
+            })}
           </div>
         </div>
 
         <div className="product-info">
-          <h2 className="title">Faded SkyBlu Denim Jeans</h2>
+          <h2 className="title">
+            {name?.charAt(0).toUpperCase() + name?.slice(1)}
+          </h2>
           <div className="rate">
-            <ul>
-              <li>
-                <AiFillStar />
-              </li>
-              <li>
-                <AiFillStar />
-              </li>
-              <li>
-                <AiFillStar />
-              </li>
-              <li>
-                <AiFillStar />
-              </li>
-            </ul>
-            <p>(100 customers reviews)</p>
+            <ul>{tempStars}</ul>
+            <p>({reviews} customers reviews)</p>
           </div>
           <h2 className="price">$149.99</h2>
 
           <div className="product-stack">
             <div className="line">
-              <p>category:</p> <span className="category">btngan</span>
+              <p>category:</p> <span className="category">{category}</span>
             </div>
             <div className="line">
               <p>Avaialblity:</p>
-              <span>mogod</span>
+              <span>{stock === 0 ? "Not Avaialble" : `${stock} in Stcok`}</span>
             </div>
             <div className="line">
               <p>SKU:</p>
-              <span>RecQ0fMd8T0Vk211E</span>
+              <span>{sku}</span>
             </div>
             <div className="line colors">
               <p>Colors:</p>
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                {colors?.map((color) => {
+                  return <li style={{ background: color }}></li>;
+                })}
               </ul>
             </div>
           </div>
 
-          <p className="product-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sit
-            id ea numquam, mollitia ullam! Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Optio sit id ea numquam, mollitia
-            ullam!
-          </p>
+          <p className="product-desc">{description}</p>
           <div className="add">
             <div className="amount-control">
               <button className="minus">

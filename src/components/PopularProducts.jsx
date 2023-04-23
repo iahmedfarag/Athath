@@ -49,9 +49,9 @@ const PopularProducts = () => {
                       <article key={id}>
                         <img src={image} alt="" />
                         <div className="info">
-                          <a href="#">
+                          <Link to={`/products/${id}`}>
                             {name.charAt(0).toUpperCase() + name.slice(1)}
-                          </a>
+                          </Link>
                           <h3>${price}</h3>
                         </div>
                       </article>

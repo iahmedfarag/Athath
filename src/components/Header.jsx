@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = ({ page }) => {
   return (
@@ -8,7 +9,7 @@ const Header = ({ page }) => {
           <h1>{page.toUpperCase()}</h1>
           <ul>
             <li>
-              <a href="">Home</a>
+              <Link to="/">Home</Link>
             </li>
             &gt;
             <li>
