@@ -108,37 +108,42 @@ section.hero {
     padding-right: 15px;
     height: 640px;
     padding-bottom: 30px;
-    .hero-card {
-      margin-left: 20%;
-      h1 {
-        font-size: 50px;
-        span {
-          display: block;
+    .hero-wrapper {
+      .hero-card {
+        margin-left: 20%;
+        h1 {
+          font-size: 50px;
+          span {
+            display: block;
+          }
         }
       }
     }
   }
 }
 @media (max-width: 768px) {
-  .section-hero {
-    .hero-card {
-      width: 500px;
-      margin-left: 20%;
-      padding: 20px 40px;
-      span {
-        font-size: 24px;
-      }
-      h1 {
-        font-size: 35px;
-        margin: 10px 0;
+  section.hero {
+    .hero-wrapper {
+      .hero-card {
+        width: 500px;
+        margin-left: 20%;
+        padding: 20px 40px;
         span {
-          display: none;
+          font-size: 24px;
+        }
+        h1 {
+          font-size: 35px;
+          margin: 10px 0;
+          span {
+            display: none;
+          }
+        }
+        p {
+          margin-bottom: 10px;
         }
       }
-      p {
-        margin-bottom: 10px;
-      }
     }
+
     .white-overlay {
       width: 150px;
     }
@@ -146,11 +151,13 @@ section.hero {
 }
 @media (max-width: 576px) {
   section.hero {
-    .hero-card {
-      width: 100%;
-    }
-    .white-overlay {
-      width: 100px;
+    .hero-wrapper {
+      .hero-card {
+        width: 100%;
+      }
+      .white-overlay {
+        width: 100px;
+      }
     }
   }
 }

@@ -2,7 +2,10 @@ import React from "react";
 import product1 from "../assets/product02.png";
 import product2 from "../assets/product03.png";
 import product3 from "../assets/product04.png";
+import { useProductsContext } from "../context/products_context.jsx";
 const PopularProducts = () => {
+  const test = useProductsContext();
+  console.log(test);
   return (
     <>
       <section className="popular">

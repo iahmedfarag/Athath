@@ -9,7 +9,9 @@ import {
   Layout,
 } from "./Page.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "animate.css/animate.css";
 import "./css/style.css";
+
 function App() {
   const router = createBrowserRouter([
     {

@@ -122,9 +122,11 @@ nav.big {
   align-items: center;
   justify-content: space-between;
   z-index: 3;
+  transition: 0.3s;
 }
 nav.big.fixed {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.3s;
 }
 nav.big.fixed .nav-logo {
   width: 100px;
@@ -419,44 +421,44 @@ section.hero .hero-wrapper .white-overlay {
     height: 640px;
     padding-bottom: 30px;
   }
-  section.hero .hero-card {
+  section.hero .hero-wrapper .hero-card {
     margin-left: 20%;
   }
-  section.hero .hero-card h1 {
+  section.hero .hero-wrapper .hero-card h1 {
     font-size: 50px;
   }
-  section.hero .hero-card h1 span {
+  section.hero .hero-wrapper .hero-card h1 span {
     display: block;
   }
 }
 @media (max-width: 768px) {
-  .section-hero .hero-card {
+  section.hero .hero-wrapper .hero-card {
     width: 500px;
     margin-left: 20%;
     padding: 20px 40px;
   }
-  .section-hero .hero-card span {
+  section.hero .hero-wrapper .hero-card span {
     font-size: 24px;
   }
-  .section-hero .hero-card h1 {
+  section.hero .hero-wrapper .hero-card h1 {
     font-size: 35px;
     margin: 10px 0;
   }
-  .section-hero .hero-card h1 span {
+  section.hero .hero-wrapper .hero-card h1 span {
     display: none;
   }
-  .section-hero .hero-card p {
+  section.hero .hero-wrapper .hero-card p {
     margin-bottom: 10px;
   }
-  .section-hero .white-overlay {
+  section.hero .white-overlay {
     width: 150px;
   }
 }
 @media (max-width: 576px) {
-  section.hero .hero-card {
+  section.hero .hero-wrapper .hero-card {
     width: 100%;
   }
-  section.hero .white-overlay {
+  section.hero .hero-wrapper .white-overlay {
     width: 100px;
   }
 }
