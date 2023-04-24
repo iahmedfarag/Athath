@@ -6,6 +6,8 @@ import { single_product_url as url } from "../data.js";
 import { useProductsContext } from "../context/products_context.jsx";
 import { useState } from "react";
 import { formatPrice } from "../helpers.js";
+import { Loading } from "../Page.js";
+
 const SingleProduct = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { id } = useParams();
@@ -17,8 +19,9 @@ const SingleProduct = () => {
   }, [id]);
 
   if (singleProductLoading) {
-    return <h1>Loading......</h1>;
+    return <Loading />;
   }
+
   const {
     id: sku,
     images,

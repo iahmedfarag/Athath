@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Hero,
   PopularProducts,
@@ -8,6 +8,9 @@ import {
   Features,
 } from "../Page.js";
 const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Hero />

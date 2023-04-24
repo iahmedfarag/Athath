@@ -1,6 +1,9 @@
 .text {
   display: flex;
   flex-wrap: wrap;
+  &.about {
+    padding: 100px 0;
+  }
   .left {
     width: 55%;
     div {
@@ -16,6 +19,9 @@
     padding: 120px 50px;
     width: 45%;
     margin-left: -5px;
+    &.about {
+      background-color: $color_white;
+    }
     h2 {
       font-size: 40px;
       line-height: 1.1;

@@ -10,45 +10,57 @@
 @import "./Footer";
 @import "./Single";
 @import "./Products";
-
-.products-list {
+section.loading {
+  position: relative;
+  height: 500px;
+  margin-top: 250px;
+  margin-bottom: -250px;
   display: flex;
-  flex-direction: column;
-  gap: 50px;
-  .product-list {
-    display: flex;
-    gap: 30px;
-    img {
-      width: 40%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .info {
-      width: 60%;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      a {
-        font-size: 18px;
-        font-weight: bold;
-        &:hover {
-          text-decoration: underline;
+  align-items: center;
+  justify-content: center;
+  .wrapper {
+    .loader {
+      width: 58px;
+      height: 58px;
+      border: 5px dotted $color_sky;
+      border-style: solid solid dotted dotted;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+      animation: rotation 2s linear infinite;
+      &::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border: 5px dotted $color_wood;
+        border-style: solid solid dotted;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        animation: rotationBack 1s linear infinite;
+        transform-origin: center center;
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
         }
       }
-      h4 {
-        color: $color_wood;
-      }
-      p {
-        font-size: 14px;
-      }
-      button {
-        background-color: $color_wood;
-        color: $color_white;
-        padding: 5px 10px;
-        font-size: 12px;
-        border-radius: 10px;
-        &:hover {
-          background-color: $color_sky;
+      @keyframes rotationBack {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-360deg);
         }
       }
     }

@@ -1,5 +1,15 @@
 .like {
   padding: 100px 0;
+  .section-header {
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
   .discover-btn {
     display: block;
     margin: 0 auto;

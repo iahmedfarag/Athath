@@ -552,6 +552,12 @@ section.hero .hero-wrapper .white-overlay {
   }
 }
 @media (max-width: 768px) {
+  .popular h2 {
+    font-size: 32px;
+  }
+  .popular p {
+    font-size: 14px;
+  }
   .popular .container .products-container .btns {
     gap: 0px;
   }
@@ -563,6 +569,9 @@ section.hero .hero-wrapper .white-overlay {
 .text {
   display: flex;
   flex-wrap: wrap;
+}
+.text.about {
+  padding: 100px 0;
 }
 .text .left {
   width: 55%;
@@ -579,6 +588,9 @@ section.hero .hero-wrapper .white-overlay {
   padding: 120px 50px;
   width: 45%;
   margin-left: -5px;
+}
+.text .right.about {
+  background-color: #fff;
 }
 .text .right h2 {
   font-size: 40px;
@@ -610,6 +622,14 @@ section.hero .hero-wrapper .white-overlay {
 }
 .like {
   padding: 100px 0;
+}
+@media (max-width: 768px) {
+  .like .section-header h2 {
+    font-size: 32px;
+  }
+  .like .section-header p {
+    font-size: 14px;
+  }
 }
 .like .discover-btn {
   display: block;
@@ -1177,4 +1197,58 @@ section.single .container .product-info .add .discover-btn {
 }
 .products-list .product-list .info button:hover {
   background-color: #335b96;
+}
+
+section.loading {
+  position: relative;
+  height: 500px;
+  margin-top: 250px;
+  margin-bottom: -250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.loading .wrapper .loader {
+  width: 58px;
+  height: 58px;
+  border: 5px dotted #335b96;
+  border-style: solid solid dotted dotted;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+section.loading .wrapper .loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 5px dotted #966f33;
+  border-style: solid solid dotted;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }/*# sourceMappingURL=style.css.map */

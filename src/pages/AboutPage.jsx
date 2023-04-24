@@ -1,22 +1,15 @@
-import React from "react";
-import { Header } from "../Page.js";
+import React, { useEffect } from "react";
+import { Header, TextSection } from "../Page.js";
+
 const AboutPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header page={"About"} />
-      <div className="container">
-        <h1>about page</h1>
-        <h1>about page</h1>
-        <h1>about page</h1>
-        <h1>about page</h1>
-        <h1>about page</h1>
-        <h1>about page</h1>
-        <h1>about page</h1>
-        <h1>about page</h1>
-        <h1>about page</h1>
-        <h1>about page</h1>
-        <h1>about page</h1>
-      </div>
+
+      <TextSection about={true} />
     </>
   );
 };

@@ -4,6 +4,8 @@ import { nav_links } from "../data.js";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdAccountBox } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
   const navbarRef1 = useRef(null);
@@ -45,9 +47,9 @@ const Navbar = () => {
       {/* nav default */}
       <nav className="big animate__animated animate__faster" ref={navbarRef1}>
         {/* nav logo */}
-        <div className="nav-logo">
+        <Link to="/" className="nav-logo">
           <img src={logo} alt="logo" />
-        </div>
+        </Link>
         {/* nav links */}
 
         <button className="menu-btn">
@@ -83,9 +85,9 @@ const Navbar = () => {
       {/* nav for small screens */}
       <nav className="small animate__animated animate__faster" ref={navbarRef2}>
         {/* nav logo */}
-        <div className="nav-logo">
+        <Link to="/" className="nav-logo">
           <img src={logo} alt="logo" />
-        </div>
+        </Link>
         {/* nav links */}
 
         <div className="menu" ref={menuRef} onClick={showLinks}>

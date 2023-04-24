@@ -22,6 +22,7 @@ import SingleProduct from "./components/SingleProduct.jsx";
 import Filters from "./components/Filters.jsx";
 import Sort from "./components/Sort.jsx";
 import Products from "./components/Products.jsx";
+import Loading from "./components/Loading.jsx";
 
 export {
   // pages
@@ -47,4 +48,5 @@ export {
   Filters,
   Sort,
   Products,
+  Loading,
 };

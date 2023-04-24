@@ -186,3 +186,49 @@
     }
   }
 }
+
+// ! list
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  .product-list {
+    display: flex;
+    gap: 30px;
+    img {
+      width: 40%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .info {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      a {
+        font-size: 18px;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      h4 {
+        color: $color_wood;
+      }
+      p {
+        font-size: 14px;
+      }
+      button {
+        background-color: $color_wood;
+        color: $color_white;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 10px;
+        &:hover {
+          background-color: $color_sky;
+        }
+      }
+    }
+  }
+}

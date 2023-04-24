@@ -9,7 +9,7 @@ const Products = () => {
   return (
     <main className="products-container">
       <Sort />
-      {gridView ? (
+      {!gridView ? (
         <>
           <div className="products-list">
             {filteredProducts.map((product) => {

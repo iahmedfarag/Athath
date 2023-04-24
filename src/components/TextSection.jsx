@@ -1,13 +1,13 @@
 import React from "react";
 import product5 from "../assets/product05.png";
 import { Link } from "react-router-dom";
-const TextSection = () => {
+const TextSection = ({ about }) => {
   return (
-    <section className="text">
+    <section className={`${about ? "text about" : "text"}`}>
       <div className="left">
         <div className=""></div>
       </div>
-      <div className="right">
+      <div className={`${about ? "right about" : "right"}`}>
         <h2>
           BEST FURNITURE <br /> MANUFACTURER
         </h2>

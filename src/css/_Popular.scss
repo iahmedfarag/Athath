@@ -45,6 +45,12 @@
 }
 @media (max-width: 768px) {
   .popular {
+    h2 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 14px;
+    }
     .container {
       .products-container {
         .btns {
