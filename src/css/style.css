@@ -575,19 +575,17 @@ section.hero .hero-wrapper .white-overlay {
 }
 .text .left {
   width: 55%;
-}
-.text .left div {
-  width: 100%;
-  height: 100%;
+  margin: 0;
   background-image: url("../assets//product05.png");
   background-repeat: no-repeat no-repeat;
   background-position: center center;
+  background-size: cover;
 }
 .text .right {
   background-color: #966f33;
   padding: 120px 50px;
   width: 45%;
-  margin-left: -5px;
+  margin: 0;
 }
 .text .right.about {
   background-color: #fff;
@@ -615,7 +613,6 @@ section.hero .hero-wrapper .white-overlay {
   .text .right {
     width: 100%;
     padding: 30px;
-    margin-left: 0;
   }
   .text .right p span {
     display: none;

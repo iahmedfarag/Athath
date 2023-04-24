@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 const TextSection = ({ about }) => {
   return (
     <section className={`${about ? "text about" : "text"}`}>
-      <div className="left">
-        <div className=""></div>
-      </div>
+      <div className="left"></div>
       <div className={`${about ? "right about" : "right"}`}>
         <h2>
           BEST FURNITURE <br /> MANUFACTURER
