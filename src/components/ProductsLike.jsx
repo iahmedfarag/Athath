@@ -2,6 +2,7 @@ import React from "react";
 import { useProductsContext } from "../context/products_context.jsx";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { formatPrice } from "./../helpers";
 
 const ProductsLike = () => {
   const { productsLike } = useProductsContext();
@@ -21,6 +22,7 @@ const ProductsLike = () => {
             {productsLike.map((product) => {
               console.log(product);
               const { id, name, price, image } = product;
+              const nPrice = formatPrice(price);
 
               return (
                 <article key={id}>
@@ -29,7 +31,7 @@ const ProductsLike = () => {
                     <Link to={`/products/${id}`}>
                       {name.charAt(0).toUpperCase() + name.slice(1)}
                     </Link>
-                    <h3>${price}</h3>
+                    <h3>{nPrice}</h3>
                   </div>
                 </article>
               );

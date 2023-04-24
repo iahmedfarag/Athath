@@ -2,12 +2,12 @@ import React from "react";
 import { useProductsContext } from "../context/products_context.jsx";
 import { useFilterContext } from "../context/filters_context.jsx";
 import { Link } from "react-router-dom";
+import { formatPrice, getUniqueValues } from "./../helpers";
 const PopularProducts = () => {
   const { productsLoading } = useProductsContext();
   const { changeCategory, allProducts, popProducts, activePopCategory } =
     useFilterContext();
-  const categoriesArr = allProducts.map((product) => product.category);
-  const categories = [...new Set(categoriesArr)];
+  const categories = getUniqueValues(allProducts, "category");
   return (
     <>
       <section className="popular">
@@ -26,6 +26,9 @@ const PopularProducts = () => {
               <>
                 <div className="btns">
                   {categories.map((category, index) => {
+                    if (category === "all") {
+                      return;
+                    }
                     return (
                       <button
                         key={index}
@@ -45,6 +48,7 @@ const PopularProducts = () => {
                 <div className="products">
                   {popProducts.map((product) => {
                     const { id, name, price, image } = product;
+                    const nPrice = formatPrice(price);
                     return (
                       <article key={id}>
                         <img src={image} alt="" />
@@ -52,7 +56,7 @@ const PopularProducts = () => {
                           <Link to={`/products/${id}`}>
                             {name.charAt(0).toUpperCase() + name.slice(1)}
                           </Link>
-                          <h3>${price}</h3>
+                          <h3>{nPrice}</h3>
                         </div>
                       </article>
                     );

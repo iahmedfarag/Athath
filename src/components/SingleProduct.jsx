@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { single_product_url as url } from "../data.js";
 import { useProductsContext } from "../context/products_context.jsx";
 import { useState } from "react";
+import { formatPrice } from "../helpers.js";
 const SingleProduct = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { id } = useParams();
@@ -32,6 +33,7 @@ const SingleProduct = () => {
     description,
     company,
   } = singleProduct;
+  const nPrice = formatPrice(price);
   const tempStars = Array.from({ length: 5 }, (_, index) => {
     const number = index + 0.5;
     return (
@@ -79,7 +81,7 @@ const SingleProduct = () => {
             <ul>{tempStars}</ul>
             <p>({reviews} customers reviews)</p>
           </div>
-          <h2 className="price">$149.99</h2>
+          <h2 className="price">{nPrice}</h2>
 
           <div className="product-stack">
             <div className="line">

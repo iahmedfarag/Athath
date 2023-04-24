@@ -1,5 +1,6 @@
 import React from "react";
 import product5 from "../assets/product05.png";
+import { Link } from "react-router-dom";
 const TextSection = () => {
   return (
     <section className="text">
@@ -18,7 +19,9 @@ const TextSection = () => {
           Lorem, ipsum dolor sit amet consectetur
           <span></span> elit. Eligendi dolore molestiae distinc.
         </p>
-        <button className="discover-btn">DISCOVER MORE</button>
+        <Link to="/products">
+          <button className="discover-btn">DISCOVER MORE</button>
+        </Link>
       </div>
     </section>
   );

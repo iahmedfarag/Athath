@@ -436,6 +436,20 @@ section.hero .hero-wrapper .white-overlay {
 .hero.header .hero-wrapper .container ul li a:hover {
   color: #966f33;
 }
+.hero.header .hero-wrapper .white-overlay {
+  width: 200px;
+  height: 70px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+}
+@media (max-width: 1200px) {
+  .hero.header .hero-wrapper .white-overlay {
+    height: 30px;
+    bottom: -30px;
+  }
+}
 
 @media (max-width: 1200px) {
   section.hero {
@@ -453,10 +467,6 @@ section.hero .hero-wrapper .white-overlay {
   }
   section.hero .hero-wrapper .hero-card p {
     margin-bottom: 10px;
-  }
-  section.hero .white-overlay {
-    height: 50px;
-    bottom: -50px;
   }
 }
 @media (max-width: 992px) {
@@ -851,6 +861,7 @@ section.single .container .product-images .imgs {
 }
 section.single .container .product-images .imgs img {
   width: 25%;
+  height: 100px;
   cursor: pointer;
 }
 section.single .container .product-images .imgs img:hover {
@@ -1014,7 +1025,6 @@ section.single .container .product-info .add .discover-btn {
 .products-page .container .filters form .colors ul li {
   min-width: 15px;
   min-height: 15px;
-  background-color: blue;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -1123,4 +1133,48 @@ section.single .container .product-info .add .discover-btn {
   .products-page .container .products-container {
     width: 100%;
   }
+}
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.products-list .product-list {
+  display: flex;
+  gap: 30px;
+}
+.products-list .product-list img {
+  width: 40%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.products-list .product-list .info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.products-list .product-list .info a {
+  font-size: 18px;
+  font-weight: bold;
+}
+.products-list .product-list .info a:hover {
+  text-decoration: underline;
+}
+.products-list .product-list .info h4 {
+  color: #966f33;
+}
+.products-list .product-list .info p {
+  font-size: 14px;
+}
+.products-list .product-list .info button {
+  background-color: #966f33;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+.products-list .product-list .info button:hover {
+  background-color: #335b96;
 }/*# sourceMappingURL=style.css.map */

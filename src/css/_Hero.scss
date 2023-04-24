@@ -74,6 +74,19 @@ section.hero {
         }
       }
     }
+    .white-overlay {
+      width: 200px;
+      height: 70px;
+      background-color: $color_white;
+      position: absolute;
+      bottom: -70px;
+      left: 0;
+      @media (max-width: 1200px) {
+        height: 30px;
+
+        bottom: -30px;
+      }
+    }
   }
 }
 
@@ -97,10 +110,6 @@ section.hero {
           margin-bottom: 10px;
         }
       }
-    }
-    .white-overlay {
-      height: 50px;
-      bottom: -50px;
     }
   }
 }

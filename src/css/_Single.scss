@@ -20,6 +20,7 @@ section.single {
 
         img {
           width: calc(100% / 4);
+          height: 100px;
           cursor: pointer;
           &:hover {
             opacity: 0.8;

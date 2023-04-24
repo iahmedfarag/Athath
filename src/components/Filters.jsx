@@ -1,6 +1,31 @@
 import React from "react";
+import { useFilterContext } from "../context/filters_context.jsx";
+import { formatPrice, getUniqueValues } from "../helpers.js";
 
 const Filters = () => {
+  const {
+    allProducts,
+    activeCategory,
+    activeCompany,
+    activeColor,
+    shipping,
+    minPrice,
+    maxPrice,
+    price,
+    priceFilter,
+    search,
+    categoryFilter,
+    companyFilter,
+    colorsFilter,
+    shippingFilter,
+    clearFilters,
+    searchFilter,
+  } = useFilterContext();
+
+  const categories = getUniqueValues(allProducts, "category");
+  const companies = getUniqueValues(allProducts, "company");
+  const colors = getUniqueValues(allProducts, "colors");
+
   return (
     <section className="filters">
       <h3>Filter Products</h3>
@@ -10,53 +35,101 @@ const Filters = () => {
           e.preventDefault();
         }}
       >
-        <input type="text" className="search" placeholder="Search" />
+        <input
+          type="text"
+          className="search"
+          placeholder="Search"
+          value={search}
+          onChange={(e) => {
+            searchFilter(e.target.value);
+          }}
+        />
 
         <ul className="categories">
           <h4>Category</h4>
           <ul>
-            <li className="active">All</li>
-            <li>Office</li>
-            <li>Living Room</li>
-            <li>Kitchen</li>
-            <li>Bedroom</li>
-            <li>Dining</li>
-            <li>Kids</li>
+            {categories.map((category, index) => {
+              return (
+                <li
+                  className={activeCategory === category ? "active" : ""}
+                  onClick={() => {
+                    categoryFilter(category);
+                  }}
+                  key={index}
+                >
+                  {category}
+                </li>
+              );
+            })}
           </ul>
         </ul>
 
         <div className="companies">
           <h4>Company</h4>
-          <select name="companies" id="">
-            <option value="">all</option>
-            <option value="">liddy</option>
-            <option value="">liddy</option>
-            <option value="">liddy</option>
+          <select
+            name="companies"
+            value={activeCompany}
+            onChange={(e) => {
+              companyFilter(e.target.value);
+            }}
+          >
+            {companies.map((company, index) => {
+              return (
+                <option value={company} key={index}>
+                  {company}
+                </option>
+              );
+            })}
           </select>
         </div>
 
         <div className="colors">
           <h4>Colors</h4>
           <ul>
-            <li className="all active">All</li>
-            <li></li>
-            <li></li>
-            <li></li>
+            {colors.map((color, index) => {
+              return (
+                <li
+                  style={{ background: color }}
+                  className={activeColor === color ? "active" : ""}
+                  key={index}
+                  onClick={() => {
+                    colorsFilter(color);
+                  }}
+                >
+                  {index === 0 ? "All" : ""}
+                </li>
+              );
+            })}
           </ul>
         </div>
 
         <div className="price">
           <h4>Price</h4>
-          <p>$19563</p>
-          <input type="range" name="" id="" />
+          <p>{formatPrice(price)}</p>
+          <input
+            type="range"
+            name="price"
+            min={minPrice}
+            max={maxPrice}
+            value={price}
+            onChange={(e) => {
+              priceFilter(e.target.value);
+            }}
+          />
         </div>
 
         <div className="shipping">
           <p>Free Shipping</p>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={shipping}
+            onChange={() => shippingFilter()}
+          />
         </div>
 
-        <button className="clear">Clear Filters</button>
+        <button className="clear" onClick={clearFilters}>
+          Clear Filters
+        </button>
       </form>
     </section>
   );
