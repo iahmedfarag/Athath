@@ -9,7 +9,11 @@ const Products = () => {
   return (
     <main className="products-container">
       <Sort />
-      {!gridView ? (
+      {filteredProducts.length < 1 ? (
+        <>
+          <h4>No Products Match Your Filters</h4>
+        </>
+      ) : !gridView ? (
         <>
           <div className="products-list">
             {filteredProducts.map((product) => {
