@@ -28,6 +28,7 @@ import ProductImages from "./components/ProductImages.jsx";
 import AddToCart from "./components/AddToCart";
 import ProductRate from "./components/ProductRate";
 import Colors from "./components/Colors.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 
 export {
   // pages
@@ -59,4 +60,5 @@ export {
   AddToCart,
   ProductRate,
   Colors,
+  PrivateRoute,
 };

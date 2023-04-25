@@ -8,6 +8,7 @@ import {
   SingleProductPage,
   Layout,
   Checkout,
+  PrivateRoute,
 } from "./Page.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
@@ -27,7 +28,14 @@ function App() {
         { path: "cart", element: <CartPage /> },
         { path: "login", element: <LoginPage /> },
         { path: "register", element: <RegisterPage /> },
-        { path: "checkout", element: <Checkout /> },
+        {
+          path: "checkout",
+          element: (
+            <PrivateRoute>
+              <Checkout />
+            </PrivateRoute>
+          ),
+        },
       ],
     },
   ]);

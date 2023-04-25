@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { Header } from "../Page.js";
 import { AiFillDelete, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { formatPrice } from "../helpers.js";
+import { useUserContext } from "../context/UserContext.jsx";
 
 const CartPage = () => {
+  const { myUser, loginWithRedirect } = useUserContext();
   const {
     cart,
     totalAmount,
@@ -141,10 +143,15 @@ const CartPage = () => {
               <span>${totalAmount + shippingFee}</span>
             </h3>
           </div>
-
-          <Link to="/checkout">
-            <button className="checkout">Proceed to checkout</button>
-          </Link>
+          {myUser ? (
+            <Link to="/checkout">
+              <button className="checkout">Proceed to checkout</button>
+            </Link>
+          ) : (
+            <button className="checkout" onClick={loginWithRedirect}>
+              Login
+            </button>
+          )}
         </div>
       </section>
     </>

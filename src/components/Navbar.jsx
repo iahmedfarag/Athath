@@ -6,8 +6,10 @@ import { MdAccountBox } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context.jsx";
+import { useUserContext } from "../context/UserContext.jsx";
 
 const Navbar = () => {
+  const { loginWithRedirect, myUser, logout } = useUserContext();
   const { totalItems } = useCartContext();
   const [openNavbar, setOpenNavbar] = useState(false);
   const navbarRef1 = useRef(null);
@@ -68,12 +70,30 @@ const Navbar = () => {
               </li>
             );
           })}
+          {myUser && (
+            <li className="nav-link">
+              <Link to="/checkout">Checkout</Link>
+            </li>
+          )}
         </ul>
 
         {/* nav  */}
         <div className="nav-info">
-          <button className="nav-btn nav-register">register</button>
-          <button className="nav-btn nav-login">login</button>
+          {myUser ? (
+            <button
+              className="nav-btn nav-login"
+              onClick={() => {
+                logout({ returnTo: window.location.origin });
+              }}
+            >
+              logout
+            </button>
+          ) : (
+            <button className="nav-btn nav-login" onClick={loginWithRedirect}>
+              login
+            </button>
+          )}
+
           <button className="nav-btn nav-user">
             <MdAccountBox />
           </button>
@@ -102,8 +122,20 @@ const Navbar = () => {
 
         {/* nav  */}
         <div className="nav-info">
-          <button className="nav-btn nav-register">register</button>
-          <button className="nav-btn nav-login">login</button>
+          {myUser ? (
+            <button
+              className="nav-btn nav-login"
+              onClick={() => {
+                logout({ returnTo: window.location.origin });
+              }}
+            >
+              logout
+            </button>
+          ) : (
+            <button className="nav-btn nav-login" onClick={loginWithRedirect}>
+              login
+            </button>
+          )}
           <button className="nav-btn nav-user">
             <MdAccountBox />
           </button>
@@ -124,6 +156,11 @@ const Navbar = () => {
               </li>
             );
           })}
+          {myUser && (
+            <li className="nav-link">
+              <Link to="/checkout">Checkout</Link>
+            </li>
+          )}
         </ul>
       </nav>
     </>
