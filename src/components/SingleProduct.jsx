@@ -1,26 +1,25 @@
 import { React, useEffect } from "react";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { single_product_url as url } from "../data.js";
 import { useProductsContext } from "../context/products_context.jsx";
 import { useState } from "react";
 import { formatPrice } from "../helpers.js";
-import { Loading } from "../Page.js";
+import {
+  AddToCart,
+  Colors,
+  Loading,
+  ProductImages,
+  ProductRate,
+} from "../Page.js";
 
 const SingleProduct = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const { id } = useParams();
   const { getSingleProduct, singleProduct, singleProductLoading } =
     useProductsContext();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    getSingleProduct(`${url}${id}`);
-  }, [id]);
 
-  if (singleProductLoading) {
-    return <Loading />;
-  }
+  const [amount, setAmount] = useState(1);
+  const [mainColor, setMainColor] = useState(null);
+
+  const { id } = useParams();
 
   const {
     id: sku,
@@ -36,56 +35,33 @@ const SingleProduct = () => {
     description,
     company,
   } = singleProduct;
+
   const nPrice = formatPrice(price);
-  const tempStars = Array.from({ length: 5 }, (_, index) => {
-    const number = index + 0.5;
-    return (
-      <li key={index}>
-        {stars > number ? (
-          <BsStarFill />
-        ) : stars > index ? (
-          <BsStarHalf />
-        ) : (
-          <BsStar />
-        )}
-      </li>
-    );
-  });
+
+  const setColor = () => {
+    setMainColor(c);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    getSingleProduct(`${url}${id}`);
+  }, [id]);
+
+  if (singleProductLoading) {
+    return <Loading />;
+  }
+
   return (
     <section className="single">
       <div className="container">
-        <div className="product-images">
-          <div className="main">
-            <img src={images ? images[activeIndex].url : ""} alt="" />
-          </div>
-          <div className="imgs">
-            {images?.map((img, index) => {
-              if (index === 3) {
-                return;
-              }
-              return (
-                <img
-                  src={img.url}
-                  key={img.id}
-                  onClick={() => {
-                    setActiveIndex(index);
-                  }}
-                />
-              );
-            })}
-          </div>
-        </div>
-
+        <ProductImages images={images} />
         <div className="product-info">
           <h2 className="title">
             {name?.charAt(0).toUpperCase() + name?.slice(1)}
           </h2>
-          <div className="rate">
-            <ul>{tempStars}</ul>
-            <p>({reviews} customers reviews)</p>
-          </div>
+          {/* rate */}
+          <ProductRate stars={stars} reviews={stars} />
           <h2 className="price">{nPrice}</h2>
-
           <div className="product-stack">
             <div className="line">
               <p>category:</p> <span className="category">{category}</span>
@@ -98,30 +74,21 @@ const SingleProduct = () => {
               <p>SKU:</p>
               <span>{sku}</span>
             </div>
-            <div className="line colors">
-              <p>Colors:</p>
-              <ul>
-                {colors?.map((color) => {
-                  return <li style={{ background: color }}></li>;
-                })}
-              </ul>
-            </div>
+            <Colors
+              singleProduct={singleProduct}
+              setMainColor={setMainColor}
+              mainColor={mainColor}
+            />
           </div>
-
           <p className="product-desc">{description}</p>
-          <div className="add">
-            <div className="amount-control">
-              <button className="minus">
-                <AiOutlineMinus />
-              </button>
-              <p className="amount">1</p>
-              <button className="plus">
-                <AiOutlinePlus />
-              </button>
-            </div>
 
-            <button className="discover-btn">ADD TO CART</button>
-          </div>
+          {/* add to cart */}
+          <AddToCart
+            amount={amount}
+            setAmount={setAmount}
+            singleProduct={singleProduct}
+            mainColor={mainColor}
+          />
         </div>
       </div>
     </section>

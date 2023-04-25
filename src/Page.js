@@ -7,6 +7,7 @@ import ProductsPage from "./pages/ProductsPage";
 import RegisterPage from "./pages/RegisterPage";
 import SingleProductPage from "./pages/SingleProductPage";
 import Layout from "./pages/Layout";
+import Checkout from "./pages/Checkout";
 
 // components
 import Footer from "./components/Footer";
@@ -23,6 +24,10 @@ import Filters from "./components/Filters.jsx";
 import Sort from "./components/Sort.jsx";
 import Products from "./components/Products.jsx";
 import Loading from "./components/Loading.jsx";
+import ProductImages from "./components/ProductImages.jsx";
+import AddToCart from "./components/AddToCart";
+import ProductRate from "./components/ProductRate";
+import Colors from "./components/Colors.jsx";
 
 export {
   // pages
@@ -34,6 +39,7 @@ export {
   RegisterPage,
   SingleProductPage,
   Layout,
+  Checkout,
   //   components
   Footer,
   Header,
@@ -49,4 +55,8 @@ export {
   Sort,
   Products,
   Loading,
+  ProductImages,
+  AddToCart,
+  ProductRate,
+  Colors,
 };

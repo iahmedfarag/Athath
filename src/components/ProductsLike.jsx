@@ -20,7 +20,6 @@ const ProductsLike = () => {
         <div className="products-container">
           <div className="products">
             {productsLike.map((product) => {
-              console.log(product);
               const { id, name, price, image } = product;
               const nPrice = formatPrice(price);
 

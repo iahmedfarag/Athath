@@ -7,10 +7,10 @@ import {
   RegisterPage,
   SingleProductPage,
   Layout,
+  Checkout,
 } from "./Page.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "react-toastify/dist/ReactToastify.css";
 import "animate.css/animate.css";
 import "./css/style.css";
 
@@ -27,6 +27,7 @@ function App() {
         { path: "cart", element: <CartPage /> },
         { path: "login", element: <LoginPage /> },
         { path: "register", element: <RegisterPage /> },
+        { path: "checkout", element: <Checkout /> },
       ],
     },
   ]);

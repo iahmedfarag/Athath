@@ -160,3 +160,36 @@ button {
     }
   }
 }
+.amount-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid gray;
+  width: fit-content;
+  border-radius: 25px;
+
+  .minus {
+    font-size: 30px;
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
+  }
+  .amount {
+    width: 30px;
+    text-align: center;
+    font-size: 16px;
+    padding: 0 10px;
+    font-weight: bold;
+  }
+  .plus {
+    font-size: 30px;
+    padding: 7px 15px;
+
+    display: flex;
+    align-items: center;
+  }
+  button {
+    &:hover {
+      color: $color_wood;
+    }
+  }
+}

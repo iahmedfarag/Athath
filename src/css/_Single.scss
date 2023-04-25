@@ -1,5 +1,5 @@
 section.single {
-  padding: 100px 0;
+  padding: 50px 0;
   .container {
     display: flex;
     justify-content: space-between;
@@ -72,8 +72,14 @@ section.single {
                 width: 15px;
                 height: 15px;
                 border-radius: 50%;
-                background-color: blue;
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+                // justify-content: center;
+                text-align: center;
+                p {
+                  color: $color_white;
+                }
               }
             }
           }
@@ -87,36 +93,7 @@ section.single {
         display: flex;
         align-items: center;
         gap: 30px;
-        .amount-control {
-          display: flex;
-          align-items: center;
-          border: 1px solid gray;
-          width: fit-content;
-          border-radius: 25px;
-          .minus {
-            font-size: 30px;
-            padding: 7px 15px;
-            display: flex;
-            align-items: center;
-          }
-          .amount {
-            font-size: 16px;
-            padding: 0 10px;
-            font-weight: bold;
-          }
-          .plus {
-            font-size: 30px;
-            padding: 7px 15px;
 
-            display: flex;
-            align-items: center;
-          }
-          button {
-            &:hover {
-              color: $color_wood;
-            }
-          }
-        }
         .discover-btn {
           width: fit-content;
         }

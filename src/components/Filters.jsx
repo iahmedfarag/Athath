@@ -90,13 +90,22 @@ const Filters = () => {
               return (
                 <li
                   style={{ background: color }}
-                  className={activeColor === color ? "active" : ""}
+                  className={
+                    index === 0 && activeColor === color
+                      ? "all active"
+                      : index === 0
+                      ? "all"
+                      : null
+                  }
                   key={index}
                   onClick={() => {
                     colorsFilter(color);
                   }}
                 >
-                  {index === 0 ? "All" : ""}
+                  {index === 0 ? <p>All</p> : null}
+                  {activeColor === color && index !== 0 ? (
+                    <p>&#10004;</p>
+                  ) : null}
                 </li>
               );
             })}

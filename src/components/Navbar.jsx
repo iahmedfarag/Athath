@@ -5,8 +5,10 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdAccountBox } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../context/cart_context.jsx";
 
 const Navbar = () => {
+  const { totalItems } = useCartContext();
   const [openNavbar, setOpenNavbar] = useState(false);
   const navbarRef1 = useRef(null);
   const navbarRef2 = useRef(null);
@@ -27,7 +29,7 @@ const Navbar = () => {
   };
 
   window.addEventListener("scroll", (e) => {
-    if (window.scrollY > 400) {
+    if (window.scrollY > 200) {
       navbarRef2?.current?.classList.add("fixed");
       navbarRef1?.current?.classList.add("fixed");
 
@@ -75,10 +77,12 @@ const Navbar = () => {
           <button className="nav-btn nav-user">
             <MdAccountBox />
           </button>
-          <button className="nav-btn nav-cart">
-            <AiOutlineShoppingCart />
-            <span>0</span>
-          </button>
+          <Link to="/cart">
+            <button className="nav-btn nav-cart">
+              <AiOutlineShoppingCart />
+              <span>{totalItems}</span>
+            </button>
+          </Link>
         </div>
       </nav>
 
@@ -103,10 +107,12 @@ const Navbar = () => {
           <button className="nav-btn nav-user">
             <MdAccountBox />
           </button>
-          <button className="nav-btn nav-cart">
-            <AiOutlineShoppingCart />
-            <span>0</span>
-          </button>
+          <Link to="/cart">
+            <button className="nav-btn nav-cart">
+              <AiOutlineShoppingCart />
+              <span>{totalItems}</span>
+            </button>
+          </Link>
         </div>
 
         <ul className="nav-links" ref={linksRef}>
