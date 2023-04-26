@@ -1487,5 +1487,12 @@ section.loading {
 }
 
 section.checkout {
-  padding: 50px 0;
+  padding: 100px 0;
+}
+section.checkout .theForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

@@ -33,6 +33,7 @@ export const CartContextProvider = ({ children }) => {
   };
   const clearCart = () => {
     dispatch({ type: "CLEAR_CART" });
+    localStorage.removeItem("cart", JSON.stringify(state.cart));
   };
 
   useEffect(() => {
