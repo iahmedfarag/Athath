@@ -9,6 +9,7 @@ import {
   Layout,
   Checkout,
   PrivateRoute,
+  AuthWrapper,
 } from "./Page.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
@@ -39,7 +40,12 @@ function App() {
       ],
     },
   ]);
-  return <RouterProvider router={router}></RouterProvider>;
+
+  return (
+    <AuthWrapper>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthWrapper>
+  );
 }
 
 export default App;

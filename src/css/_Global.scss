@@ -7,7 +7,11 @@ $color_black: #000;
   margin: 0;
   padding: 0;
 }
-
+#root {
+  height: 100vh;
+  // margin: 0;
+  // padding: 0;
+}
 body {
   font-family: "Poppins", sans-serif;
 }

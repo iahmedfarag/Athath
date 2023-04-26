@@ -29,7 +29,7 @@ import AddToCart from "./components/AddToCart";
 import ProductRate from "./components/ProductRate";
 import Colors from "./components/Colors.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
-
+import AuthWrapper from "./pages/AuthWrapper.jsx";
 export {
   // pages
   HomePage,
@@ -41,6 +41,7 @@ export {
   SingleProductPage,
   Layout,
   Checkout,
+  AuthWrapper,
   //   components
   Footer,
   Header,
