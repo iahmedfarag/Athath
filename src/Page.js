@@ -30,6 +30,8 @@ import ProductRate from "./components/ProductRate";
 import Colors from "./components/Colors.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import AuthWrapper from "./pages/AuthWrapper.jsx";
+import StripeCheckout from "./components/StripeCheckout.jsx";
+
 export {
   // pages
   HomePage,
@@ -62,4 +64,5 @@ export {
   ProductRate,
   Colors,
   PrivateRoute,
+  StripeCheckout,
 };
