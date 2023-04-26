@@ -12,7 +12,9 @@ import { useCartContext } from "../context/cart_context.jsx";
 import { useUserContext } from "../context/UserContext.jsx";
 import { formatPrice } from "../helpers.js";
 
-const promise = loadStripe(`${import.meta.env.REACT_APP_STRIPE_PUBLIC_KEY}`);
+const promise = loadStripe(
+  `${import.meta.env.VITE_REACT_APP_STRIPE_PUBLIC_KEY}`
+);
 
 const CheckoutForm = () => {
   return <h2>hello from stripe checkout</h2>;
