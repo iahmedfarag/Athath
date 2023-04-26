@@ -10,7 +10,7 @@ import { useUserContext } from "../context/UserContext.jsx";
 
 const Navbar = () => {
   const { loginWithRedirect, myUser, logout } = useUserContext();
-  const { totalItems } = useCartContext();
+  const { totalItems, clearCart } = useCartContext();
   const [openNavbar, setOpenNavbar] = useState(false);
   const navbarRef1 = useRef(null);
   const navbarRef2 = useRef(null);
@@ -84,6 +84,7 @@ const Navbar = () => {
               className="nav-btn nav-login"
               onClick={() => {
                 logout({ returnTo: window.location.origin });
+                clearCart();
               }}
             >
               logout
@@ -127,6 +128,7 @@ const Navbar = () => {
               className="nav-btn nav-login"
               onClick={() => {
                 logout({ returnTo: window.location.origin });
+                clearCart();
               }}
             >
               logout

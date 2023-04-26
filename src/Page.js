@@ -8,6 +8,7 @@ import RegisterPage from "./pages/RegisterPage";
 import SingleProductPage from "./pages/SingleProductPage";
 import Layout from "./pages/Layout";
 import Checkout from "./pages/Checkout";
+import AuthWrapper from "./pages/AuthWrapper.jsx";
 
 // components
 import Footer from "./components/Footer";
@@ -29,7 +30,6 @@ import AddToCart from "./components/AddToCart";
 import ProductRate from "./components/ProductRate";
 import Colors from "./components/Colors.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
-import AuthWrapper from "./pages/AuthWrapper.jsx";
 import StripeCheckout from "./components/StripeCheckout.jsx";
 
 export {

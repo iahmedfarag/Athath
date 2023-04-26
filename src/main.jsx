@@ -10,8 +10,8 @@ import { UserProvider } from "./context/UserContext.jsx";
 // oKLJqgOBZ6xf5OFF5YMScjnhPbJsT6h3
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Auth0Provider
-    domain="dev-sj4iwz8gd72s1tx1.us.auth0.com"
-    clientId="oKLJqgOBZ6xf5OFF5YMScjnhPbJsT6h3"
+    domain={import.meta.env.REACT_APP_AUTH_DOMAIN}
+    clientId={import.meta.env.REACT_APP_AUTH_CLIENT_ID}
     authorizationParams={{
       redirect_uri: window.location.origin,
     }}
