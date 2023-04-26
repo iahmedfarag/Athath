@@ -84,7 +84,6 @@ const Navbar = () => {
               className="nav-btn nav-login"
               onClick={() => {
                 logout({ returnTo: window.location.origin });
-                clearCart();
               }}
             >
               logout
