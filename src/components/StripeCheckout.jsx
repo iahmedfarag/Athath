@@ -57,7 +57,7 @@ const CheckoutForm = () => {
       setClientSecret(`${data.data.clientSecret}`);
     } catch (error) {
       setProcessing(false);
-      console.log("error");
+      // console.log("error");
       console.log(error);
     }
   };
@@ -68,7 +68,7 @@ const CheckoutForm = () => {
 
   const handleChange = async (e) => {
     setDisabled(e.empty);
-    setError(e.error ? e.error.message : "");
+    // setError(e.error ? e.error.message : "");
   };
 
   const handleSumbit = async (e) => {
@@ -80,7 +80,6 @@ const CheckoutForm = () => {
     //   },
     // });
 
-    // console.log(payload);
     setProcessing(false);
     setSucceeded(true);
     setTimeout(() => {
