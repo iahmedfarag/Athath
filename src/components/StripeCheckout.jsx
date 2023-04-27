@@ -25,7 +25,7 @@ const CheckoutForm = () => {
   const [error, setError] = useState(null);
   const [processing, setProcessing] = useState("");
   const [disabled, setDisabled] = useState(true);
-  const [clientSecret, setClientSecret] = useState();
+  const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
 
@@ -54,6 +54,7 @@ const CheckoutForm = () => {
         JSON.stringify({ cart, shippingFee, totalAmount })
       );
       setClientSecret(`${data.data.clientSecret}`);
+      console.log(clientSecret);
     } catch (error) {
       console.log(error.msg);
     }
