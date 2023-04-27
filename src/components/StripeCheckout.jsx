@@ -68,41 +68,41 @@ const CheckoutForm = () => {
 
   const handleChange = async (e) => {
     setDisabled(e.empty);
-    // setError(e.error ? e.error.message : "");
+    setError(e.error ? e.error.message : "");
   };
 
   const handleSumbit = async (e) => {
     e.preventDefault();
-    // setProcessing(true);
-    // const payload = await stripe.confirmCardPayment(`${clientSecret}`, {
-    //   payment_method: {
-    //     card: elements.getElement(CardElement),
-    //   },
-    // });
+    setProcessing(true);
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+      },
+    });
 
-    setProcessing(false);
-    setSucceeded(true);
-    setTimeout(() => {
-      clearCart();
-      navigate("/");
-    }, 5000);
-    // if (payload.error) {
-    //   setProcessing(false);
-    //   setError(null);
-    //   setSucceeded(true);
-    //   setTimeout(() => {
-    //     clearCart();
-    //     navigate("/");
-    //   }, 5000);
-    // } else {
-    //   setProcessing(false);
-    //   setError(null);
-    //   setSucceeded(true);
-    //   setTimeout(() => {
-    //     clearCart();
-    //     navigate("/");
-    //   }, 5000);
-    // }
+    // setProcessing(false);
+    // setSucceeded(true);
+    // setTimeout(() => {
+    //   clearCart();
+    //   navigate("/");
+    // }, 5000);
+    if (payload.error) {
+      setProcessing(false);
+      setError(null);
+      setSucceeded(true);
+      setTimeout(() => {
+        clearCart();
+        navigate("/");
+      }, 5000);
+    } else {
+      setProcessing(false);
+      setError(null);
+      setSucceeded(true);
+      setTimeout(() => {
+        clearCart();
+        navigate("/");
+      }, 5000);
+    }
   };
 
   return (
