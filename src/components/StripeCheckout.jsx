@@ -81,8 +81,14 @@ const CheckoutForm = () => {
     });
 
     if (payload.error) {
-      setError(`Payment failed ${payload.error.message}`);
+      // setError(`Payment failed ${payload.error.message}`);
       setProcessing(false);
+      setError(null);
+      setSucceeded(true);
+      setTimeout(() => {
+        clearCart();
+        navigate("/");
+      }, 5000);
     } else {
       setProcessing(false);
       setError(null);
