@@ -19,9 +19,8 @@ exports.handler = async function (event, context) {
     });
     return {
       statusCode: 200,
-      headers: { apiKey: process.env.VITE_REACT_APP_STRIPE_SECRET_KEY },
       body: JSON.stringify({
-        clientSecret: paymentIntent.client_secret,
+        clientSecret: `${paymentIntent.client_secret}`,
       }),
     };
   } catch (error) {
