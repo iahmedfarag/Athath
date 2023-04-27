@@ -26,7 +26,9 @@ exports.handler = async function (event, context) {
   } catch (error) {
     return {
       statusCode: 501,
-      body: JSON.stringify({ msg: error.message }),
+      body: JSON.stringify({
+        clientSecret: paymentIntent.client_secret,
+      }),
     };
   }
 };
