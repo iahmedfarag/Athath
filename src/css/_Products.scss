@@ -189,6 +189,39 @@
       }
       .products-container {
         width: 100%;
+        .sort {
+          .length {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .products-page {
+    .container {
+      .products-container {
+        .sort {
+          gap: 15px;
+
+          .line {
+            display: none;
+          }
+          .length {
+            p {
+              font-size: 12px;
+            }
+          }
+          .by {
+            p {
+              font-size: 14px;
+            }
+            select {
+              padding: 0s;
+            }
+          }
+        }
       }
     }
   }

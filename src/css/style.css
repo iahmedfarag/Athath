@@ -1170,6 +1170,26 @@ section.single .container .product-info .add .discover-btn {
   .products-page .container .products-container {
     width: 100%;
   }
+  .products-page .container .products-container .sort .length {
+    font-size: 12px;
+  }
+}
+@media (max-width: 576px) {
+  .products-page .container .products-container .sort {
+    gap: 15px;
+  }
+  .products-page .container .products-container .sort .line {
+    display: none;
+  }
+  .products-page .container .products-container .sort .length p {
+    font-size: 12px;
+  }
+  .products-page .container .products-container .sort .by p {
+    font-size: 14px;
+  }
+  .products-page .container .products-container .sort .by select {
+    padding: 0s;
+  }
 }
 .products-list {
   display: flex;
