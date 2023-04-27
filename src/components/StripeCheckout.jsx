@@ -74,30 +74,34 @@ const CheckoutForm = () => {
   const handleSumbit = async (e) => {
     e.preventDefault();
     setProcessing(true);
-    const payload = await stripe.confirmCardPayment(`${clientSecret}`, {
-      payment_method: {
-        card: elements.getElement(CardElement),
-      },
-    });
+    try {
+      const payload = await stripe.confirmCardPayment(`${clientSecret}`, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
+      });
 
-    console.log(payload);
+      console.log(payload);
 
-    if (payload.error) {
-      setProcessing(false);
-      setError(null);
-      setSucceeded(true);
-      setTimeout(() => {
-        clearCart();
-        navigate("/");
-      }, 5000);
-    } else {
-      setProcessing(false);
-      setError(null);
-      setSucceeded(true);
-      setTimeout(() => {
-        clearCart();
-        navigate("/");
-      }, 5000);
+      if (payload.error) {
+        setProcessing(false);
+        setError(null);
+        setSucceeded(true);
+        setTimeout(() => {
+          clearCart();
+          navigate("/");
+        }, 5000);
+      } else {
+        setProcessing(false);
+        setError(null);
+        setSucceeded(true);
+        setTimeout(() => {
+          clearCart();
+          navigate("/");
+        }, 5000);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
