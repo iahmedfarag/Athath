@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../Desktop/athath/functions/hello.js"],
+  "sourceRoot": "C:/Users/Farag/AppData/Local/Temp/tmp-20540-j4qZImYWcyHY",
+  "sourcesContent": ["// domain/.netlify/functions/hello\r\nexports.handler = async function (event, context) {\r\n  return {\r\n    statusCode: 200,\r\n    body: \"hello world\",\r\n  };\r\n};\r\n"],
+  "mappings": ";AACA,QAAQ,UAAU,eAAgB,OAAO,SAAS;AAChD,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM;AAAA,EACR;AACF;",
+  "names": []
+}

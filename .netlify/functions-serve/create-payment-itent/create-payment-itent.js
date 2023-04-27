@@ -1,0 +1,1 @@
+module.exports = require('./src/functions/create-payment-itent.js')
