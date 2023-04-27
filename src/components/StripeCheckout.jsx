@@ -55,7 +55,7 @@ const CheckoutForm = () => {
       );
       setClientSecret(`${data.data.clientSecret}`);
     } catch (error) {
-      console.log(error.response);
+      console.log(error.msg);
     }
   };
 
@@ -76,12 +76,13 @@ const CheckoutForm = () => {
         card: elements.getElement(CardElement),
       },
     });
+
     if (payload.error) {
       setError(`Payment failed ${payload.error.message}`);
       setProcessing(false);
     } else {
-      setError(null);
       setProcessing(false);
+      setError(null);
       setSucceeded(true);
       setTimeout(() => {
         clearCart();

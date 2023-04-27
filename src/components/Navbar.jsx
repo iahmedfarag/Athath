@@ -95,9 +95,9 @@ const Navbar = () => {
             </button>
           )}
 
-          <button className="nav-btn nav-user">
+          {/* <button className="nav-btn nav-user">
             <MdAccountBox />
-          </button>
+          </button> */}
           <Link to="/cart">
             <button className="nav-btn nav-cart">
               <AiOutlineShoppingCart />
@@ -138,9 +138,9 @@ const Navbar = () => {
               login
             </button>
           )}
-          <button className="nav-btn nav-user">
+          {/* <button className="nav-btn nav-user">
             <MdAccountBox />
-          </button>
+          </button> */}
           <Link to="/cart">
             <button className="nav-btn nav-cart">
               <AiOutlineShoppingCart />
