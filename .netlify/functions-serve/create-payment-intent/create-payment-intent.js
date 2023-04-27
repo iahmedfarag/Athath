@@ -1,1 +1,1 @@
-module.exports = require('./src/functions/create-payment-intent.js')
+module.exports = require("./functions/create-payment-intent.js");
