@@ -74,12 +74,14 @@ const CheckoutForm = () => {
   const handleSumbit = async (e) => {
     e.preventDefault();
     setProcessing(true);
-    const payload = await stripe.confirmCardPayment(clientSecret, {
+    const payload = await stripe.confirmCardPayment(`${clientSecret}`, {
       payment_method: {
         card: elements.getElement(CardElement),
       },
     });
+
     console.log(payload);
+
     if (payload.error) {
       setProcessing(false);
       setError(null);
