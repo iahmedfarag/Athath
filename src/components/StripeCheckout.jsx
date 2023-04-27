@@ -81,6 +81,7 @@ const CheckoutForm = () => {
     // });
 
     // console.log(payload);
+    setProcessing(false);
     setSucceeded(true);
     setTimeout(() => {
       clearCart();
