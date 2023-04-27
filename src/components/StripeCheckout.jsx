@@ -48,6 +48,7 @@ const CheckoutForm = () => {
   };
 
   const createPaymentIntent = async () => {
+    console.log("create payment intent");
     try {
       const data = await axios.post(
         "/.netlify/functions/create-payment-intent",
@@ -57,7 +58,7 @@ const CheckoutForm = () => {
       // console.log(data.data.clientSecret);
     } catch (error) {
       console.log("error");
-      console.log(error.msg);
+      console.log(error);
     }
   };
 
