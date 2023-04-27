@@ -55,7 +55,6 @@ const CheckoutForm = () => {
         JSON.stringify({ cart, shippingFee, totalAmount })
       );
       setClientSecret(data.data.clientSecret);
-      // console.log(data.data.clientSecret);
     } catch (error) {
       setProcessing(false);
       console.log("error");
@@ -65,13 +64,13 @@ const CheckoutForm = () => {
 
   useEffect(() => {
     createPaymentIntent();
-    // eslint-disable-next-line
   }, []);
 
   const handleChange = async (e) => {
     setDisabled(e.empty);
     setError(e.error ? e.error.message : "");
   };
+
   const handleSumbit = async (e) => {
     e.preventDefault();
     setProcessing(true);
