@@ -79,10 +79,9 @@ const CheckoutForm = () => {
         card: elements.getElement(CardElement),
       },
     });
-
+    console.log(payload);
     if (payload.error) {
       setProcessing(false);
-      // setError(`Payment failed ${payload.error.message}`);
       setError(null);
       setSucceeded(true);
       setTimeout(() => {
