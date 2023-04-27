@@ -1,5 +1,5 @@
 // domain/.netlify/functions/create-payment-intent
-require("dotenv").config();
+const dotenv = require("dotenv");
 dotenv.config();
 // const stripe = require("stripe")(process.env.VITE_REACT_APP_STRIPE_SECRET_KEY);
 const Stripe = require("stripe");
