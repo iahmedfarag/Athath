@@ -52,7 +52,6 @@ const CheckoutForm = () => {
     try {
       const data = await axios.post(
         "/.netlify/functions/create-payment-intent",
-        { apiKey: `${import.meta.env.VITE_REACT_APP_STRIPE_PUBLIC_KEY}` },
         JSON.stringify({ cart, shippingFee, totalAmount })
       );
       setClientSecret(`${data.data.clientSecret}`);
@@ -74,32 +73,36 @@ const CheckoutForm = () => {
 
   const handleSumbit = async (e) => {
     e.preventDefault();
-    setProcessing(true);
-    const payload = await stripe.confirmCardPayment(`${clientSecret}`, {
-      payment_method: {
-        card: elements.getElement(CardElement),
-      },
-    });
+    // setProcessing(true);
+    // const payload = await stripe.confirmCardPayment(`${clientSecret}`, {
+    //   payment_method: {
+    //     card: elements.getElement(CardElement),
+    //   },
+    // });
 
-    console.log(payload);
-
-    if (payload.error) {
-      setProcessing(false);
-      setError(null);
-      setSucceeded(true);
-      setTimeout(() => {
-        clearCart();
-        navigate("/");
-      }, 5000);
-    } else {
-      setProcessing(false);
-      setError(null);
-      setSucceeded(true);
-      setTimeout(() => {
-        clearCart();
-        navigate("/");
-      }, 5000);
-    }
+    // console.log(payload);
+    setSucceeded(true);
+    setTimeout(() => {
+      clearCart();
+      navigate("/");
+    }, 5000);
+    // if (payload.error) {
+    //   setProcessing(false);
+    //   setError(null);
+    //   setSucceeded(true);
+    //   setTimeout(() => {
+    //     clearCart();
+    //     navigate("/");
+    //   }, 5000);
+    // } else {
+    //   setProcessing(false);
+    //   setError(null);
+    //   setSucceeded(true);
+    //   setTimeout(() => {
+    //     clearCart();
+    //     navigate("/");
+    //   }, 5000);
+    // }
   };
 
   return (
