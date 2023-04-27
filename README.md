@@ -9,6 +9,6 @@ filtering of all products by (search, category, colors, company, price, and ship
 and sorting by (price, and name)
 cart page have to log in use to the checkout page
 
-+ The checkout working - connecting with the stripe you can try it
+The checkout working - connecting with the stripe you can try it
 
 demo: https://athathe.netlify.app/
