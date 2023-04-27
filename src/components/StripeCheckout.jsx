@@ -53,8 +53,8 @@ const CheckoutForm = () => {
         "/.netlify/functions/create-payment-intent",
         JSON.stringify({ cart, shippingFee, totalAmount })
       );
-      setClientSecret(`${data.data.clientSecret}`);
-      console.log(clientSecret);
+      setClientSecret(data.data.clientSecret);
+      // console.log(data.data.clientSecret);
     } catch (error) {
       console.log(error.msg);
     }
@@ -72,7 +72,7 @@ const CheckoutForm = () => {
   const handleSumbit = async (e) => {
     e.preventDefault();
     setProcessing(true);
-    const payload = await stripe.confirmCardPayment(clientSecret, {
+    const payload = await stripe.confirmCardPayment(clientSecret.toString(), {
       payment_method: {
         card: elements.getElement(CardElement),
       },
