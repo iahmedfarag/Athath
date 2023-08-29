@@ -53,7 +53,6 @@ const Navbar = () => {
         {/* nav logo */}
         <Link to="/" className="nav-logo">
           <img src={logo} alt="logo" />
-          TEST ALOOOOOOOOOO
         </Link>
         {/* nav links */}
 
@@ -67,7 +66,7 @@ const Navbar = () => {
             const { text, url } = link;
             return (
               <li className="nav-link" key={index}>
-                <a href={url}>{text}</a>
+                <Link to={url}>{text}</Link>
               </li>
             );
           })}
@@ -155,7 +154,7 @@ const Navbar = () => {
             const { text, url } = link;
             return (
               <li className="nav-link" key={index}>
-                <a href={url}>{text}</a>
+                <Link to={url}>{text}</Link>
               </li>
             );
           })}

@@ -13,7 +13,7 @@ const Header = ({ page }) => {
             </li>
             &gt;
             <li>
-              <a href="">{page}</a>
+              <Link to={`/`}>{page}</Link>
             </li>
           </ul>
         </div>

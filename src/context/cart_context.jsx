@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/cart_reducer.jsx";
+
 const getLocalStorage = () => {
   let cart = localStorage.getItem("cart");
 
@@ -9,6 +10,7 @@ const getLocalStorage = () => {
     return [];
   }
 };
+
 const initialState = {
   cart: getLocalStorage(),
   totalItems: 0,

@@ -7,6 +7,7 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { ImYoutube } from "react-icons/im";
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
@@ -22,19 +23,19 @@ const Footer = () => {
           </p>
           <ul>
             <li>
-              <a href="">
+              <Link to={`/`}>
                 <BsFacebook />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="">
+              <Link to={`/`}>
                 <AiFillTwitterCircle />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="">
+              <Link to={`/`}>
                 <ImYoutube />
-              </a>
+              </Link>
             </li>
           </ul>
         </article>
@@ -42,13 +43,13 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul>
             <li>
-              <a href="">Image Licensin</a>
+              <Link to={`/`}>Image Licensin</Link>
             </li>
             <li>
-              <a href="">Style Guide</a>
+              <Link to={`/`}>Style Guide</Link>
             </li>
             <li>
-              <a href="">Privacy Policy</a>
+              <Link to={`/`}>Privacy Policy</Link>
             </li>
           </ul>
         </article>
@@ -56,13 +57,13 @@ const Footer = () => {
           <h4>Shop Category</h4>
           <ul>
             <li>
-              <a href="">Image Licensin</a>
+              <Link to={`/`}>Image Licensin</Link>
             </li>
             <li>
-              <a href="">Style Guide</a>
+              <Link to={`/`}>Style Guide</Link>
             </li>
             <li>
-              <a href="">Privacy Policy</a>
+              <Link to={`/`}>Privacy Policy</Link>
             </li>
           </ul>
         </article>
@@ -70,13 +71,13 @@ const Footer = () => {
           <h4>Pertners</h4>
           <ul>
             <li>
-              <a href="">Image Licensin</a>
+              <Link to={`/`}>Image Licensin</Link>
             </li>
             <li>
-              <a href="">Style Guide</a>
+              <Link to={`/`}>Style Guide</Link>
             </li>
             <li>
-              <a href="">Privacy Policy</a>
+              <Link to={`/`}>Privacy Policy</Link>
             </li>
           </ul>
         </article>
@@ -87,15 +88,14 @@ const Footer = () => {
         <p>
           Made by <span>ahmedfarag</span>
         </p>
-        <a href="https://github.com/iahmedfarag" target="_blank">
+        <Link to={"https://github.com/iahmedfarag"} target="_blank">
           <AiOutlineGithub />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/ahmed-farag-16433b260/"
+        </Link>
+        <Link to={"https://www.linkedin.com/in/ahmed-farag-16433b260/"}
           target="_blank"
         >
           <AiFillLinkedin />
-        </a>
+        </Link>
       </div>
     </footer>
   );
