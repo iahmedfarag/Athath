@@ -53,6 +53,7 @@ const Navbar = () => {
         {/* nav logo */}
         <Link to="/" className="nav-logo">
           <img src={logo} alt="logo" />
+          TEST ALOOOOOOOOOO
         </Link>
         {/* nav links */}
 
